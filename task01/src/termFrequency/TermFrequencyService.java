@@ -19,7 +19,8 @@ public class TermFrequencyService {
 
     //Method to remove punctuations from a text file
     public static String removePunctuation(String line) {
-        List<Character> characters = Arrays.asList('.', ',', ':', '!', '-', '(', ')', '{', '}', '`', '\'', '\"', '?');
+        List<Character> characters = Arrays.asList('.', ',', ':', '!', '-', '(', ')', '{', '}', '`', '\'', '\"', '?'
+        , '_', '[', ']', '|');
         HashSet<Character> punctuations = new HashSet<>(characters);
 
         //Build  a new string to store characters
@@ -103,8 +104,6 @@ public class TermFrequencyService {
             String lowerWord = word.toLowerCase();
             words.add(lowerWord);
         }
-        //Array list of index 0 to size of words, these are indexes, sorting in descending order
-
         String[] wordsArray = words.toArray(String[]::new);
 
         HashMap<String, Double> wordTermFrequencies = this.wordTermFrequencies;
